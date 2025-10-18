@@ -17,7 +17,7 @@ This repository contains the CMOS circuit design and SPICE simulation activities
 
 ## Setup & Prerequisites
 
-- **Tools**: Ngspice (for SPICE simulations), Magic VLSI (optional for layout views), and a text editor for netlists.
-- **Collaterals**: Download the Sky130 workshop files from [kunalg123/sky130CircuitDesignWorkshop](https://github.com/kunalg123/sky130CircuitDesignWorkshop/).
-- **Workshop Access**: Enabled on the VSDIAT platform—follow the repo's instructions for setup.
-- **Prerequisites**: Knowledge from previous weeks (Verilog basics from Week 1-2, STA from Week 3) is assumed. Refer to [Week 3 repo](https://github.com/tejasbg19/India_riscV_SoC_tapeout_week3) for continuity.
+- **Tools**: `Ngspice` (for SPICE simulations), `xschem`, and a text editor for netlists.
+
+
+>**Note:** Due to Internals/Midsem, I request for more time.
