@@ -59,12 +59,14 @@ Simulation is the process of providing input signals to a circuit model and obse
 MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) is a four-terminal semiconductor device used for switching and amplification in electronic circuits.
 
 **Types of MOSFETs:**
-- **NMOS**: N-channel MOSFET, conducts when gate voltage is high
-- **PMOS**: P-channel MOSFET, conducts when gate voltage is low
+- **NMOS**: N-channel MOSFET, conducts when gate voltage is more than the threshold voltage
+- **PMOS**: P-channel MOSFET, conducts when gate voltage is less than the threshold voltage
 
 | PMOS | NMOS |
 |------|------|
 | ![PMOS](./Images/12_PMOS_STRUCT.png) | ![NMOS](./Images/11_NMOS_STRCT.png) |
+
+----
 
 ## 🔍 The NMOS Transistor
 
@@ -76,6 +78,13 @@ An NMOS transistor is built on a p-type substrate with n+ source and drain regio
 - **Gate oxide**: Insulating layer (SiO<sub>2</sub>) between gate and channel
 - **Isolation region**: Prevents interference between adjacent transistors
 
+<div align="center">
+  <img src="./Images/2_NMOS_Struct.png" alt="2_NMOS_Struct.png" width="600" />
+  <p><b>Cross sectional View of NMOS transistor</b></p>
+</div>
+<br>
+
+
 **Four terminals:**
 1. **Gate (G)**: Controls channel formation
 2. **Source (S)**: Source of carriers (electrons for NMOS)
@@ -84,28 +93,59 @@ An NMOS transistor is built on a p-type substrate with n+ source and drain regio
 
 NMOS is a voltage-controlled current device - the gate voltage controls the current flow between source and drain.
 
-*[Image: I<sub>ds</sub> equation]*
-
 ### Different Regions of Operation
 
 **Accumulation:**
-When V<sub>gs</sub> < 0, holes are attracted to the oxide-semiconductor interface, creating an accumulation layer. No conduction channel exists.
+When V<sub>gs</sub> < 0, holes are attracted to the oxide-semiconductor interface, creating an accumulation layer. No conduction channel exists and I<sub>ds</sub> = 0.
 
 **Depletion:**
-When 0 < V<sub>gs</sub> < V<sub>t</sub>, holes are repelled from the interface, creating a depletion region. Still no conduction channel.
+When 0 < V<sub>gs</sub> < V<sub>t</sub>, holes are repelled from the interface, creating a depletion region. Still no conduction channel forms and I<sub>ds</sub> remains approximately zero.
 
-**Inversion:**
-When V<sub>gs</sub> > V<sub>t</sub>, electrons are attracted to the interface, forming an n-type conduction channel between source and drain.
+**Inversion & Channel Formation:**
+When V<sub>gs</sub> > V<sub>t</sub>, electrons are attracted to the interface, forming an n-type conduction channel between source and drain. The transistor enters different operating regions based on V<sub>ds</sub>:
 
-**Channel Formation:**
-As V<sub>gs</sub> increases beyond threshold voltage, an inversion layer forms - a conductive n-channel that allows current flow between source and drain when V<sub>ds</sub> > 0.
+<div align="center">
+  <img src="./Images/3_inv_channel.png" alt="3_inv_channel.png" width="600" />
+  <p><b>Inversion & Channel Formation</b></p>
+</div>
+<br>
+
+
+**Cutoff Region ( V<sub>gs</sub> < V<sub>t</sub>):**
+No Channel formation hence **I<sub>ds</sub> = 0**
+
+**Linear/Triode Region (V<sub>ds</sub> < V<sub>gs</sub> - V<sub>t</sub>):**
+A uniform channel forms and current flows with **I<sub>ds</sub> = μ<sub>n</sub>C<sub>ox</sub>(W/L)[(V<sub>gs</sub> - V<sub>t</sub>)V<sub>ds</sub> - V<sub>ds</sub>²/2]**
+
+**Saturation Region (V<sub>ds</sub> ≥ V<sub>gs</sub> - V<sub>t</sub>):**
+The channel pinches off near the drain, and I<sub>ds</sub> saturates at **I<sub>ds</sub> = (μ<sub>n</sub>C<sub>ox</sub>/2)(W/L)(V<sub>gs</sub> - V<sub>t</sub>)²(1 + λV<sub>ds</sub>)**
+
+**Where:**
+- μ<sub>n</sub>: Electron mobility
+- C<sub>ox</sub>: Gate oxide capacitance
+- W/L: Width-to-length ratio
+- λ: Channel-length modulation parameter
+
+---
+
 
 ### Threshold Voltage (V<sub>t</sub>)
 
 Threshold voltage is the minimum gate-to-source voltage required to create a strong inversion layer and form a conductive channel between source and drain.
 
+<div align="center">
+  <img src="./Images/7_vth_equationa.png" alt="7_vth_equationa.png" width="600" />
+</div>
+<br>
+
 #### Body Effect
 The body effect occurs when the source-bulk voltage (V<sub>sb</sub>) is non-zero, which modifies the threshold voltage.
+
+<div align="center">
+  <img src="./Images/5_positive_vs.png" alt="5_positive_vs.png" width="600" />
+  <p><b>Body Effect</b></p>
+</div>
+<br>
 
 **How it works:**
 - When V<sub>sb</sub> > 0, the depletion region widens
@@ -117,6 +157,5 @@ The body effect occurs when the source-bulk voltage (V<sub>sb</sub>) is non-zero
 - In pass transistors and transmission gates
 - In circuits where source cannot be connected to bulk
 
-*[Image: Body effect equation]*
 
 The body effect is important in STA because it affects switching thresholds and delay calculations in complex logic gates.
