@@ -9,7 +9,7 @@ This task introduces fundamental concepts of electronic circuits, simulation too
 A circuit is an interconnection of various electronic components (such as PMOS and NMOS transistors, resistors, and capacitors) that performs a specific function. In CMOS design, circuits are built using complementary pairs of PMOS and NMOS transistors to create logic gates and complex digital systems.
 
 <div align="center">
-  <img src="./Images/10_rc_ckt.png" alt="10_rc_ckt.png" width="600" />
+  <img src="./Images/10_rc_ckt.png" alt="10_rc_ckt.png" width="400" />
   <p><b>A Simple RC Circuit</b></p>
 </div>
 <br>
@@ -64,7 +64,7 @@ MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) is a four-terminal se
 
 | PMOS | NMOS |
 |------|------|
-| *[Image: PMOS structure]* | *[Image: NMOS structure]* |
+| !(PMOS)[./Images/12_PMOS_STRUCT.png] | !(NMOS)[./Images/11_NMOS_STRCT.png] |
 
 ## 🔍 The NMOS Transistor
 
