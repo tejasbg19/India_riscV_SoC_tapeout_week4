@@ -64,7 +64,7 @@ MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) is a four-terminal se
 
 | PMOS | NMOS |
 |------|------|
-| !(PMOS)[./Images/12_PMOS_STRUCT.png] | !(NMOS)[./Images/11_NMOS_STRCT.png] |
+| ![PMOS](./Images/12_PMOS_STRUCT.png) | ![NMOS](./Images/11_NMOS_STRCT.png) |
 
 ## 🔍 The NMOS Transistor
 
