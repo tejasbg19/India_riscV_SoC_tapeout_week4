@@ -8,6 +8,12 @@ This task introduces fundamental concepts of electronic circuits, simulation too
 ### Circuit
 A circuit is an interconnection of various electronic components (such as PMOS and NMOS transistors, resistors, and capacitors) that performs a specific function. In CMOS design, circuits are built using complementary pairs of PMOS and NMOS transistors to create logic gates and complex digital systems.
 
+<div align="center">
+  <img src="./Images/10_rc_ckt.png" alt="10_rc_ckt.png" width="600" />
+  <p><b>A Simple RC Circuit</b></p>
+</div>
+<br>
+
 ### Simulator
 A simulator is a software tool that models the behavior of electronic circuits by solving mathematical equations describing component behavior and their interconnections.
 
